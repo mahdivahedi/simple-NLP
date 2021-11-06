@@ -135,11 +135,11 @@ if __name__=="__main__":
 	while(inp!="!q"):
 	    for k in generate_bigram_for_query(inp):
         	 p_value *= backoff_model(pos_unigram, pos_bigram, k)
-	      n_value *= backoff_model(neg_unigram, neg_bigram, k)
+	         n_value *= backoff_model(neg_unigram, neg_bigram, k)
 
 	    print(p_value,n_value)
 	    if p_value >= n_value:
-	        print("not filter this")
+	        print("don't filter this")
 	    else:
 	        print("filter this")
 	    print(">",end=" ")
